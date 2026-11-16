@@ -1,0 +1,27 @@
+{
+  "evidence_type": "Observed VPS response, 2026-11-15; explanation incomplete",
+  "http_status": 200,
+  "purchase_order_id": "PO-104",
+  "supplier": "Global Components Ltd",
+  "ordered_quantity": 500,
+  "received_quantity": 450,
+  "invoiced_quantity": 500,
+  "delivery_shortfall": 50,
+  "invoice_difference": 50,
+  "financial_exposure": 1000.0,
+  "currency": "USD",
+  "status": "EXCEPTION",
+  "requires_review": true,
+  "agent_explanation": "## Summary\n\nPO-104 (supplier: Global Components Ltd) is in **EXCEPTION** status and flagged as requiring review. The order was for **500 units**, but only **450 units** were received, while the supplier invoiced for **500 units**. This creates a **50-unit delivery shortfall** and a matching **50-unit invoice difference** — the invoice bills for goods not yet received. Provisional financial exposure is **$1,000.00 USD**.\n\n## Business Impact\n\n- The company may be overpaying by $1,000.00 USD (provisional) if the invoice is paid in full, since invoiced quantity (500) exceeds verified receipts (45",
+  "tools_executed": [
+    "get_purchase_order",
+    "search_company_policies"
+  ],
+  "policy_sources": [
+    "invoice_policy.txt",
+    "receiving_policy.txt",
+    "supplier_escalation.txt"
+  ],
+  "agent_completed": true,
+  "note": "agent_completed indicates the agent reached its final response, not that the report is complete. The source response stopped mid-sentence."
+}

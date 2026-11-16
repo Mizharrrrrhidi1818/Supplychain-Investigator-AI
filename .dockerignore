@@ -1,0 +1,15 @@
+
+.venv/
+.git/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+storage/
+debug_*.py
+*.log
+workflows/
+docs/

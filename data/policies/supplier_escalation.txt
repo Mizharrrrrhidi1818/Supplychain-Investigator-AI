@@ -1,0 +1,19 @@
+
+SUPPLYCHAIN-AI DEMO COMPANY
+Supplier Exception Escalation Policy
+
+Section 3.1 — Supplier Communication
+
+Purchasing staff should contact the supplier when a
+delivery discrepancy is identified.
+
+Section 3.2 — Supporting Evidence
+
+Staff should request shipment confirmation, packing
+slips, or a delivery schedule for missing quantities.
+
+Section 3.3 — Escalation
+
+Unresolved discrepancies must be referred to an
+authorized procurement manager. Supplier penalties
+must not be imposed automatically.

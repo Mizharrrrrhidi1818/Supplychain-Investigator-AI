@@ -1,0 +1,20 @@
+
+SUPPLYCHAIN-AI DEMO COMPANY
+Receiving and Inventory Policy
+
+Section 1.1 — Delivery Verification
+
+Warehouse staff must compare the physical quantity
+received against the corresponding purchase order.
+
+Section 1.2 — Short Deliveries
+
+If received quantity is lower than ordered quantity,
+staff must record the discrepancy and confirm whether
+the remaining quantity is scheduled for another delivery.
+
+Section 1.3 — Inventory Records
+
+Inventory records must reflect verified physical
+receipts. Adjustments require approval from an
+authorized inventory supervisor.

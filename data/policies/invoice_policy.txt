@@ -1,0 +1,20 @@
+
+SUPPLYCHAIN-AI DEMO COMPANY
+Invoice Verification Policy
+
+Section 2.1 — Three-Way Matching
+
+Purchase orders, delivery records, and supplier invoices
+must be compared before invoice approval.
+
+Section 2.2 — Quantity Mismatches
+
+If invoiced quantity exceeds received quantity,
+accounts payable must flag the invoice for human review
+and request supporting delivery documentation.
+
+Section 2.3 — Payment Decisions
+
+The authorized finance employee must decide whether to
+hold, partially approve, or otherwise resolve an invoice.
+An AI system must not change payment status automatically.

@@ -1,0 +1,165 @@
+{
+  "name": "Supplychain-ai | Purchase Order Investigation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "supplychain-investigate",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2dce83e9-5c8d-4808-b916-99f9e09921c2",
+      "name": "Webhook",
+      "webhookId": "64ffba32-cc31-4ac2-be6e-7a032095843d"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8000/agent/investigate",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=purchase_order_id",
+              "value": "={{ $json.body.purchase_order_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        176,
+        0
+      ],
+      "id": "d67bb2d5-4da2-4c5f-901f-4051c3cb8550",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "63c0db2c-88ed-4176-a7f7-a3ed13611b17",
+              "leftValue": "={{ $json.requires_review }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        336,
+        0
+      ],
+      "id": "edaf0c22-a362-42bb-a903-9a63972e5c7d",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        560,
+        -96
+      ],
+      "id": "5b523a4c-e3de-4f91-b0da-7592f5e1356e",
+      "name": "Return Exception Report"
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        560,
+        96
+      ],
+      "id": "4f15a5de-e416-44ee-90e8-29f6693ddfd7",
+      "name": "Return Matched Report"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Return Exception Report",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Matched Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "1a5d05f1-de06-4f0d-8496-ed4d57797564",
+  "meta": {
+    "instanceId": "1dbef5b8548acc4fc02ff4e16f41dc4c40198e3ca55d9a66f6f776e17109959c"
+  },
+  "nodeGroups": [],
+  "id": "q7wJGfeIpfLkNNJD",
+  "tags": []
+}
