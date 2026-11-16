@@ -8,7 +8,6 @@
 [![SQLite](https://img.shields.io/badge/SQLite-Data_Storage-003B57)](https://www.sqlite.org/)
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-LLM_API-6D57C8)](https://openrouter.ai/)
 [![Deployment](https://img.shields.io/badge/Deployment-Ubuntu_VPS-5E2750)](https://ubuntu.com/)
-[![Status](https://img.shields.io/badge/Status-Portfolio_MVP-yellow)](#verified-results)
 
 **Supplychain-ai** is a portfolio MVP investigating discrepancies between purchase orders, deliveries, and invoices. It combines deterministic data checks with policy retrieval, an LLM agent using two read-only tools, n8n workflow automation, and a containerized FastAPI deployment on an Ubuntu VPS.
 
@@ -141,7 +140,6 @@ A short screen recording is recommended. See [n8n video storyboard](docs/n8n-vid
 
 ## Project documentation
 
-- [Comprehensive report](docs/Supplychain-ai_Comprehensive_Report.md)
 - [n8n demonstration storyboard](docs/n8n-video-storyboard.md)
 - [n8n workflow export](workflows/supplychain_n8n.json)
 - [Observed VPS API example](examples/po104_vps_result.json)
